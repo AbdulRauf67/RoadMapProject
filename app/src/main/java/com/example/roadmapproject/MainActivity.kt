@@ -17,8 +17,9 @@ class MainActivity : AppCompatActivity() {
         binding=DataBindingUtil.setContentView(this,R.layout.activity_main)
 
         binding.button1.setOnClickListener(View.OnClickListener {
-            var intentvar=Intent(this,MainActivity2::class.java)
-            startActivity(intentvar)
+            var `intent-var`=Intent(this,MainActivity2::class.java)
+            startActivity(`intent-var`)
         })
+
     }
 }
