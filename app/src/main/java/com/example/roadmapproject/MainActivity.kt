@@ -20,6 +20,10 @@ class MainActivity : AppCompatActivity() {
             var `intent-var`=Intent(this,MainActivity2::class.java)
             startActivity(`intent-var`)
         })
+        binding.button.setOnClickListener(View.OnClickListener {
+            var intent=Intent(this,TextViews::class.java)
+            startActivity(intent)
+        })
 
     }
 }
