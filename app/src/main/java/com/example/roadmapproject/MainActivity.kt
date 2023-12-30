@@ -24,6 +24,11 @@ class MainActivity : AppCompatActivity() {
             var intent=Intent(this,TextViews::class.java)
             startActivity(intent)
         })
+        binding.cardViewBtn.setOnClickListener(View.OnClickListener {
+            var intent=Intent(this,CardViewDesign::class.java)
+            startActivity(intent)
+        })
+
 
     }
 }
