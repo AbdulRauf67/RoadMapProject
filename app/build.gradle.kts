@@ -1,16 +1,19 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-android")
 }
 
 android {
     namespace = "com.example.roadmapproject"
-    compileSdk = 33
+    compileSdk = 34
+
+
 
     defaultConfig {
         applicationId = "com.example.roadmapproject"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -25,6 +28,10 @@ android {
                 "proguard-rules.pro"
             )
         }
+        android {
+            dataBinding.enable = true
+        }
+
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -44,4 +51,6 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("androidx.webkit:webkit:1.8.0")
+
 }
