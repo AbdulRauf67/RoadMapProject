@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
             var intent=Intent(this,CardViewDesign::class.java)
             startActivity(intent)
         })
+        binding.webSiteBtn.setOnClickListener(View.OnClickListener {
+            var intent=Intent(this,WebSiteView::class.java)
+            startActivity(intent)
+        })
 
 
     }
