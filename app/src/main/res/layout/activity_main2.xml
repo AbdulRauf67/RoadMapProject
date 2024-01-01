@@ -97,6 +97,19 @@
 
 
         <Button
+            android:id="@+id/JavaTpointBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="92dp"
+            android:text="go to JavaTpoint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.468"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinner2"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
             android:id="@+id/InfoBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

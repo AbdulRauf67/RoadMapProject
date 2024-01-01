@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Message
@@ -74,8 +75,6 @@ class MainActivity2 : AppCompatActivity() {
 
         }
 
-
-
         binding.switch1.setOnCheckedChangeListener {_, isChecked ->
             val message=if (isChecked) "Switch On" else "Switch Off"
                 binding.switch1.text=message;
@@ -130,7 +129,6 @@ class MainActivity2 : AppCompatActivity() {
             false
         }
 
-
         binding.InfoBtn.setOnClickListener(View.OnClickListener {
 
             if (binding.radioButton.isChecked){
@@ -144,6 +142,10 @@ class MainActivity2 : AppCompatActivity() {
                 if (binding.editTextTextPassword.text.toString() != binding.editTextTextPassword2.text.toString()) {
                     Toast.makeText(this, "Please Enter the same password", Toast.LENGTH_LONG).show()
                 } else {
+                    /* Explicit intent
+                    Explicit intent satisfies the request within the application component.
+                    It takes the fully qualified class name of activities or services that we want to start.
+                     */
                     var intent1 = Intent(this, TextViews::class.java)
                     intent1.putExtra("FirstName", binding.editTextText.text.toString())
                     intent1.putExtra("LastName", binding.editTextText2.text.toString())
@@ -161,7 +163,14 @@ class MainActivity2 : AppCompatActivity() {
             }
         })
 
-
+        // implicit intent implementation on Button click
+        /* Android implicit intent invokes the component of another app to handle the request.
+        * It does not specify the component name specifically.  */
+        binding.JavaTpointBtn.setOnClickListener(View.OnClickListener {
+            var intent=Intent(Intent.ACTION_VIEW)
+            intent.setData(Uri.parse("https://www.javatpoint.com/kotlin-android-implicit-intent"))
+            startActivity(intent)
+        })
     }
     private fun showToast(context:Context=applicationContext,message:String,duration: Int=Toast.LENGTH_LONG) {
         Toast.makeText(context, message, duration).show()
