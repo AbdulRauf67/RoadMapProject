@@ -1,5 +1,6 @@
 package com.example.roadmapproject
 
+import MovieData
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
@@ -169,6 +170,17 @@ class MainActivity2 : AppCompatActivity() {
         binding.JavaTpointBtn.setOnClickListener(View.OnClickListener {
             var intent=Intent(Intent.ACTION_VIEW)
             intent.setData(Uri.parse("https://www.javatpoint.com/kotlin-android-implicit-intent"))
+            startActivity(intent)
+        })
+
+
+        // Initialize the data Class
+        val movieData=MovieData(5,"ClassFllows","Generic information","2023",
+            "10:35","Abdul Rauf","BSCS fallows","Http://GeeksForGeeks")
+        // Parcelable Intent
+        binding.parcelabeIntentBtn.setOnClickListener(View.OnClickListener {
+            var intent=Intent(this,ParcelableIntentDesign::class.java)
+            intent.putExtra("MoveInfo",movieData)
             startActivity(intent)
         })
     }
