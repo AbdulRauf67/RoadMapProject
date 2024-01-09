@@ -22,7 +22,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(`intent-var`)
         })
         binding.button.setOnClickListener(View.OnClickListener {
+            // passingObject is a serializable for intent
+            val passingObject=MyCustomObject()
+            passingObject.name="Abdul Rauf"
+            passingObject.id=67
+            passingObject.place="KhanPur"
             var intent=Intent(this,TextViews::class.java)
+            intent.putExtra("checkId","Main")
+            intent.putExtra("object",passingObject)
             startActivity(intent)
         })
         binding.cardViewBtn.setOnClickListener(View.OnClickListener {

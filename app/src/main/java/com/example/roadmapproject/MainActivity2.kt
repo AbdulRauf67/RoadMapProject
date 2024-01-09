@@ -148,6 +148,7 @@ class MainActivity2 : AppCompatActivity() {
                     It takes the fully qualified class name of activities or services that we want to start.
                      */
                     var intent1 = Intent(this, TextViews::class.java)
+                    intent.putExtra("checkId","Main2")
                     intent1.putExtra("FirstName", binding.editTextText.text.toString())
                     intent1.putExtra("LastName", binding.editTextText2.text.toString())
                     intent1.putExtra("Email", binding.editTextTextEmailAddress.text.toString())

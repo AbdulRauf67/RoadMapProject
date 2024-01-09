@@ -15,6 +15,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.roadmapproject.databinding. ActivityTextViewsBinding
 import java.time.DayOfWeek
 
+@Suppress("DEPRECATION")
 class TextViews : AppCompatActivity() {
     private lateinit var binding: ActivityTextViewsBinding
     private var progressBarStatus=0
@@ -49,6 +50,7 @@ class TextViews : AppCompatActivity() {
 
  */
 
+
         binding.timePicker.setOnTimeChangedListener { _, hours, minute ->
             var hour=hours
             var pm_am=" "
@@ -80,18 +82,25 @@ class TextViews : AppCompatActivity() {
         }
 
 
-
-
         binding.button3.setOnClickListener(View.OnClickListener {
 
-            binding.textView1.text = intent.getStringExtra("FirstName")
-            binding.textView2.text = intent.getStringExtra("LastName")
-            binding.textView3.text = intent.getStringExtra("Email")
-            binding.textView4.text = intent.getStringExtra("Phone")
-            binding.textView5.text = intent.getStringExtra("Phone2")
-            binding.textView6.text = intent.getStringExtra("Password")
-            binding.textView7.text = intent.getStringExtra("Password2")
-            binding.textView8.text = intent.getStringExtra("Gender")
+            if (intent.getStringExtra("checkId")=="Main") {
+
+                val derivedObject = intent.getSerializableExtra("object") as MyCustomObject
+                binding.textView2.text = derivedObject.name
+                binding.textView3.text = derivedObject.id.toString()
+                binding.textView4.text = derivedObject.place
+            }
+            else {
+                binding.textView1.text = intent.getStringExtra("FirstName")
+                binding.textView2.text = intent.getStringExtra("LastName")
+                binding.textView3.text = intent.getStringExtra("Email")
+                binding.textView4.text = intent.getStringExtra("Phone")
+                binding.textView5.text = intent.getStringExtra("Phone2")
+                binding.textView6.text = intent.getStringExtra("Password")
+                binding.textView7.text = intent.getStringExtra("Password2")
+                binding.textView8.text = intent.getStringExtra("Gender")
+            }
         })
 
 
