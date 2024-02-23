@@ -11,8 +11,10 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Adapter
 import android.widget.ArrayAdapter
+import android.widget.ListView
 import android.widget.SearchView
 import android.widget.SeekBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
@@ -22,6 +24,7 @@ import com.google.android.material.snackbar.Snackbar
 @Suppress("DEPRECATION")
 class ParcelableIntentDesign : AppCompatActivity() {
     private lateinit var binding: ActivityParcelableIntentDesignBinding
+    private lateinit var listView: ListView
     lateinit var Clayout:ConstraintLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +51,7 @@ class ParcelableIntentDesign : AppCompatActivity() {
             "Python","C#","Assembly Language",)
         val adapter: ArrayAdapter<String> = ArrayAdapter<String>(this,
             android.R.layout.simple_spinner_item,languages)
-        var listView=binding.listView
+        listView=binding.listView
         listView.adapter=adapter
 
         registerForContextMenu(binding.listView)
@@ -164,11 +167,19 @@ class ParcelableIntentDesign : AppCompatActivity() {
     override fun onContextItemSelected(item: MenuItem): Boolean {
         return when (item.itemId){
             R.id.call->{
-                Toast.makeText(this,"Call code",Toast.LENGTH_LONG).show()
+                listView.setOnItemClickListener { parent, view, position, id ->
+                    val textView=view.findViewById<TextView>(android.R.id.text1)
+                    textView.setTextColor(Color.parseColor("green"))
+                }
+                Toast.makeText(this,"green color",Toast.LENGTH_LONG).show()
                 return true
             }
             R.id.sms->{
-                Toast.makeText(this,"sms code",Toast.LENGTH_LONG).show()
+                listView.setOnItemClickListener { parent, view, position, id ->
+                    val textView=view.findViewById<TextView>(android.R.id.text1)
+                    textView.setTextColor(Color.parseColor("red"))
+                }
+                Toast.makeText(this,"red Color",Toast.LENGTH_LONG).show()
                 return true
             }
 
