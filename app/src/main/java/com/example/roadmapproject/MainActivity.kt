@@ -10,6 +10,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.roadmapproject.databinding.ActivityMainBinding
@@ -50,7 +51,15 @@ class MainActivity : AppCompatActivity() {
             var intent=Intent(this,WebSiteView::class.java)
             startActivity(intent)
         })
-
+        binding.activity3btn.setOnClickListener(View.OnClickListener {
+            val pop_upMenu=PopupMenu(this,binding.activity3btn)
+            pop_upMenu.menuInflater.inflate(R.menu.pop_up_menu,pop_upMenu.menu)
+            pop_upMenu.setOnMenuItemClickListener { menuItem ->
+                Toast.makeText(this,"you clicked "+ menuItem.title,Toast.LENGTH_LONG).show()
+                true
+            }
+            pop_upMenu.show()
+        })
 
     }
     //configure option menus

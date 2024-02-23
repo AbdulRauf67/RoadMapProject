@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/java"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="java Language" />
+    <item
+        android:id="@+id/kotlinLanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="kotlin Language" />
+    <item
+        android:id="@+id/androidf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="android" />
+    <item
+        android:id="@+id/react_native"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="react_native" />
+    <item
+        android:id="@+id/NodeJS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Node.JS Language" />
+</menu>
