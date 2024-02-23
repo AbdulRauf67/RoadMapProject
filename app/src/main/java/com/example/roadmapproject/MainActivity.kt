@@ -1,20 +1,28 @@
 package com.example.roadmapproject
 
+import MovieData
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.roadmapproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    @SuppressLint("UseSupportActionBar")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         binding=DataBindingUtil.setContentView(this,R.layout.activity_main)
+
+        setSupportActionBar(binding.toolbar2)
 
         binding.button1.setOnClickListener(View.OnClickListener {
             // Explicit Intent
@@ -42,5 +50,41 @@ class MainActivity : AppCompatActivity() {
         })
 
 
+
+
+    }
+    //configure option menus
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menus_in_toolbar,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId== R.id.ParcelableIntent){
+            val movieData=MovieData(5,"ClassFllows","Generic information","2023",
+                "10:35","Abdul Rauf","BSCS fallows","Http://GeeksForGeeks")
+            // Parcelable Intent
+            var intent=Intent(this,ParcelableIntentDesign::class.java)
+            intent.putExtra("MoveInfo",movieData)
+            startActivity(intent)
+        }
+        else if (item.itemId== R.id.views){
+            val passingObject=MyCustomObject()
+            passingObject.name="Abdul Rauf"
+            passingObject.id=67
+            passingObject.place="KhanPur"
+            var intent=Intent(this,TextViews::class.java)
+            intent.putExtra("checkId","Main")
+            intent.putExtra("object",passingObject)
+            startActivity(intent)
+        }
+        else if (item.itemId== R.id.secondActivity) {
+            var `intent-var` = Intent(this, MainActivity2::class.java)
+            startActivity(`intent-var`)
+        }
+        else{
+            Toast.makeText(this,"Copy",Toast.LENGTH_LONG).show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

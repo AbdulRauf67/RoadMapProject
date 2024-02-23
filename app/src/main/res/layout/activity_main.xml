@@ -12,6 +12,19 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
+            app:title="@string/app_name"
+            app:subtitle="Abdul Rauf"
+            app:navigationIcon="@drawable/menu_icon"
+            app:logo="@drawable/logo_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            tools:ignore="MissingConstraints" />
+
         <TextView
             style="@style/CustomFontSyle"
             android:id="@+id/textView"
@@ -83,6 +96,17 @@
             android:text="Views"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button1" />
+
+        <Button
+            android:id="@+id/activity3btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="108dp"
+            android:text="3rd activity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.208"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/webSiteBtn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
