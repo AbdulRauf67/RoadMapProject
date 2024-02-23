@@ -10,7 +10,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ParcelableIntentDesign">
+        android:id="@+id/ParcelableIntentDesign"
+        tools:context=".ParcelableIntentDesign"
+        tools:ignore="InvalidId">
 
 
         <TextView
@@ -69,6 +71,18 @@
             app:layout_constraintTop_toBottomOf="@+id/textView6"
             tools:layout_editor_absoluteX="0dp" />
 
+        <Button
+            android:id="@+id/snackBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="show snack bar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/HomeBtn"
+            app:layout_constraintHorizontal_bias="0.288"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/listView"
+            app:layout_constraintVertical_bias="0.494" />
+
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
@@ -98,13 +112,13 @@
             android:id="@+id/HomeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="80dp"
             android:layout_marginBottom="84dp"
             android:text="Home"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/listView" />
+            app:layout_constraintTop_toBottomOf="@+id/listView"
+            app:layout_constraintVertical_bias="0.927" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

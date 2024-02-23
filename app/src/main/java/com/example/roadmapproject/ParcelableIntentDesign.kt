@@ -2,6 +2,7 @@ package com.example.roadmapproject
 
 import MovieData
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,12 +10,15 @@ import android.widget.Adapter
 import android.widget.ArrayAdapter
 import android.widget.SearchView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import com.example.roadmapproject.databinding.ActivityParcelableIntentDesignBinding
+import com.google.android.material.snackbar.Snackbar
 
 @Suppress("DEPRECATION")
 class ParcelableIntentDesign : AppCompatActivity() {
     private lateinit var binding: ActivityParcelableIntentDesignBinding
+    lateinit var Clayout:ConstraintLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_parcelable_intent_design)
@@ -55,7 +59,6 @@ class ParcelableIntentDesign : AppCompatActivity() {
                     }
                     return false
                 }
-
                 override fun onQueryTextChange(newText: String?): Boolean {
                     adapter.filter.filter(newText)
                     return false
@@ -65,12 +68,44 @@ class ParcelableIntentDesign : AppCompatActivity() {
         }
 
 
+        Clayout=binding.ParcelableIntentDesign
+        var btn=binding.snackBtn2
+        btn.setOnClickListener {
+            // create an instance of the snackbar
+            binding.textView1.setTextColor(Color.parseColor("green"))
+            binding.textView2.setTextColor(Color.parseColor("green"))
+            binding.textView3.setTextColor(Color.parseColor("green"))
+            binding.textView4.setTextColor(Color.parseColor("green"))
+            binding.textView5.setTextColor(Color.parseColor("green"))
+            binding.textView6.setTextColor(Color.parseColor("green"))
+            binding.textView7.setTextColor(Color.parseColor("green"))
+            binding.textView8.setTextColor(Color.parseColor("green"))
+
+            val snackbar = Snackbar.make(Clayout, "List Text Color changed to green", Snackbar.LENGTH_LONG)
+                .setAction("UNDO") {
+                    binding.textView1.setTextColor(Color.parseColor("blue"))
+                    binding.textView2.setTextColor(Color.parseColor("blue"))
+                    binding.textView3.setTextColor(Color.parseColor("blue"))
+                    binding.textView4.setTextColor(Color.parseColor("blue"))
+                    binding.textView5.setTextColor(Color.parseColor("blue"))
+                    binding.textView6.setTextColor(Color.parseColor("blue"))
+                    binding.textView7.setTextColor(Color.parseColor("blue"))
+                    binding.textView8.setTextColor(Color.parseColor("blue"))
+
+                    val snackbar =
+                        Snackbar.make(Clayout, "changed to old color", Snackbar.LENGTH_LONG)
+                    snackbar.show()
+                }
+            // call show() method to
+            // display the snackbar
+            snackbar.show()
+        }
+
+
         binding.HomeBtn.setOnClickListener(View.OnClickListener {
             // Explicit Intent
             var `intent-var`= Intent(this,MainActivity2::class.java)
             startActivity(`intent-var`)
         })
     }
-
-    fun click(view: View) {}
 }
