@@ -5,6 +5,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Adapter
+import android.widget.ArrayAdapter
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.roadmapproject.databinding.ActivityParcelableIntentDesignBinding
 
@@ -32,6 +36,34 @@ class ParcelableIntentDesign : AppCompatActivity() {
             binding.textView7.text = moveData.decp
             binding.textView8.text = moveData.Url
         }
+        var languages= arrayOf("java","Kotlin","javaScript","NodeJavaScript","C","C++",
+            "Python","C#","Assembly Language",)
+        val adapter: ArrayAdapter<String> = ArrayAdapter<String>(this,
+            android.R.layout.simple_spinner_item,languages)
+        binding.listView.adapter=adapter
+
+
+        // implemented search view using the list languages
+        var searchView = binding.searchView.also {
+            it.setOnQueryTextListener(/* listener = */ object : SearchView.OnQueryTextListener,
+                androidx.appcompat.widget.SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    if (languages.contains(query)) {
+                        adapter.filter.filter(query)
+                    } else {
+                        Toast.makeText(this@ParcelableIntentDesign,"Notfound",Toast.LENGTH_LONG).show()
+                    }
+                    return false
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    adapter.filter.filter(newText)
+                    return false
+                }
+
+            })
+        }
+
 
         binding.HomeBtn.setOnClickListener(View.OnClickListener {
             // Explicit Intent
@@ -39,4 +71,6 @@ class ParcelableIntentDesign : AppCompatActivity() {
             startActivity(`intent-var`)
         })
     }
+
+    fun click(view: View) {}
 }
