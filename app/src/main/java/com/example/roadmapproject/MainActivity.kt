@@ -5,9 +5,11 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.roadmapproject.databinding.ActivityMainBinding
@@ -50,8 +52,6 @@ class MainActivity : AppCompatActivity() {
         })
 
 
-
-
     }
     //configure option menus
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -87,4 +87,5 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
 }

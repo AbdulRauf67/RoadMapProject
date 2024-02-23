@@ -5,6 +5,9 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextMenu
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Adapter
 import android.widget.ArrayAdapter
@@ -45,7 +48,11 @@ class ParcelableIntentDesign : AppCompatActivity() {
             "Python","C#","Assembly Language",)
         val adapter: ArrayAdapter<String> = ArrayAdapter<String>(this,
             android.R.layout.simple_spinner_item,languages)
-        binding.listView.adapter=adapter
+        var listView=binding.listView
+        listView.adapter=adapter
+
+        registerForContextMenu(binding.listView)
+        registerForContextMenu(binding.textView8)
 
 
         // implemented search view using the list languages
@@ -143,4 +150,30 @@ class ParcelableIntentDesign : AppCompatActivity() {
             startActivity(`intent-var`)
         })
     }
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        val inflater=menuInflater
+        inflater.inflate(R.menu.menu_main,menu)
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId){
+            R.id.call->{
+                Toast.makeText(this,"Call code",Toast.LENGTH_LONG).show()
+                return true
+            }
+            R.id.sms->{
+                Toast.makeText(this,"sms code",Toast.LENGTH_LONG).show()
+                return true
+            }
+
+            else -> {super.onContextItemSelected(item)}
+        }
+    }
+
 }
