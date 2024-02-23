@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Adapter
 import android.widget.ArrayAdapter
 import android.widget.SearchView
+import android.widget.SeekBar
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
@@ -67,6 +68,41 @@ class ParcelableIntentDesign : AppCompatActivity() {
             })
         }
 
+        // seekBar code
+        binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seek: SeekBar,
+                                           progress: Int, fromUser: Boolean) {
+                // write custom code for progress is changed
+            }
+
+            override fun onStartTrackingTouch(seek: SeekBar) {
+                // write custom code for progress is started
+            }
+
+            override fun onStopTrackingTouch(seek: SeekBar) {
+                // write custom code for progress is stopped
+                Toast.makeText(this@ParcelableIntentDesign,
+                    "Progress is: " + seek.progress + "%",
+                    Toast.LENGTH_SHORT).show()
+            }
+        })
+        binding.seekBar3.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seek: SeekBar,
+                                           progress: Int, fromUser: Boolean) {
+                // write custom code for progress is changed
+            }
+
+            override fun onStartTrackingTouch(seek: SeekBar) {
+                // write custom code for progress is started
+            }
+
+            override fun onStopTrackingTouch(seek: SeekBar) {
+                // write custom code for progress is stopped
+                Toast.makeText(this@ParcelableIntentDesign,
+                    "Progress is: " + seek.progress + "%",
+                    Toast.LENGTH_SHORT).show()
+            }
+        })
 
         Clayout=binding.ParcelableIntentDesign
         var btn=binding.snackBtn2
@@ -100,7 +136,6 @@ class ParcelableIntentDesign : AppCompatActivity() {
             // display the snackbar
             snackbar.show()
         }
-
 
         binding.HomeBtn.setOnClickListener(View.OnClickListener {
             // Explicit Intent
