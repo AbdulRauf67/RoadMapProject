@@ -19,6 +19,7 @@ import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.adapters.ToolbarBindingAdapter
@@ -131,6 +132,24 @@ class MainActivity2 : AppCompatActivity() {
         }
 
         binding.InfoBtn.setOnClickListener(View.OnClickListener {
+
+            // alert dialog
+            val builder=AlertDialog.Builder(this)
+            builder.setTitle("Submit required fields")
+            builder.setMessage("fill the required fields before show the information of these infromations ..   okay")
+            builder.setIcon(android.R.drawable.ic_dialog_alert)
+            builder.setPositiveButton("yes"){
+                    _, _ ->Toast.makeText(this,"you choice the Yes",Toast.LENGTH_LONG).show()
+            }
+            builder.setNeutralButton("Cancel"){
+                    _, _ ->Toast.makeText(this,"Cancel operation",Toast.LENGTH_LONG).show()
+            }
+            builder.setNegativeButton("No"){
+                    _, _ ->Toast.makeText(this,"Clicked No",Toast.LENGTH_LONG).show()
+            }
+            val alertDialog:AlertDialog=builder.create()
+            alertDialog.setCancelable(false)
+            alertDialog.show()
 
             if (binding.radioButton.isChecked){
                 value="Male"
