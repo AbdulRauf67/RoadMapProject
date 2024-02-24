@@ -11,14 +11,17 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Adapter
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ListView
 import android.widget.SearchView
 import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import com.example.roadmapproject.databinding.ActivityParcelableIntentDesignBinding
+import com.example.roadmapproject.databinding.CustomviewLayoutBinding
 import com.google.android.material.snackbar.Snackbar
 
 @Suppress("DEPRECATION")
@@ -147,10 +150,32 @@ class ParcelableIntentDesign : AppCompatActivity() {
             snackbar.show()
         }
 
-        binding.HomeBtn.setOnClickListener(View.OnClickListener {
-            // Explicit Intent
-            var `intent-var`= Intent(this,MainActivity2::class.java)
-            startActivity(`intent-var`)
+        binding.BackBtn.setOnClickListener(View.OnClickListener {
+
+            val builder=AlertDialog.Builder(this,R.style.CustomAlertDialog).create()
+            val view= layoutInflater.inflate(R.layout.customview_layout,null)
+            var title=view.findViewById<TextView>(R.id.title)
+            title.text="Goto"
+            //binding1.title.text="GoTo"
+            var message=view.findViewById<TextView>(R.id.message)
+            message.text="Click on anyone  \n if you Click the 2nd Activity than goto second screen \n" + "if you click on the home button then goto Home screen"
+           // binding1.message.text="Click on anyone  \n if you Click the parent than goto parent screen \n" + "if you click on the home button then goto Home screen"
+            var homeBtn=view.findViewById<Button>(R.id.home)
+            var parentBtn=view.findViewById<Button>(R.id.parent)
+            builder.setView(view)
+            homeBtn.setOnClickListener(View.OnClickListener {
+                var intent1=Intent(this,MainActivity::class.java)
+                startActivity(intent1)
+                builder.dismiss()
+            })
+            parentBtn.setOnClickListener(View.OnClickListener {
+                // Explicit Intent
+                var `intent-var`= Intent(this,MainActivity2::class.java)
+                startActivity(`intent-var`)
+                builder.dismiss()
+            })
+            builder.setCanceledOnTouchOutside(false)
+            builder.show()
         })
     }
 

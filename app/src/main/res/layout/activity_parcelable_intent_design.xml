@@ -134,11 +134,11 @@
             tools:layout_editor_absoluteX="0dp" />
 
         <Button
-            android:id="@+id/HomeBtn"
+            android:id="@+id/BackBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="80dp"
-            android:text="Home"
+            android:text="Back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/seekBar3" />
