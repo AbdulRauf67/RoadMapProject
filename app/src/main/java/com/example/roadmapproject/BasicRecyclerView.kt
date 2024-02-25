@@ -34,7 +34,7 @@ class BasicRecyclerView : AppCompatActivity()  {
         val onItemClickListener: AdapterView.OnItemClickListener? = null
 
         // This will pass the ArrayList to our Adapter
-        adapter = CustomAdapter(data)
+        adapter = CustomAdapter(this,data)
 
         // Setting the Adapter with the recyclerview
         recyclerView.adapter = adapter

@@ -28,6 +28,15 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
+        <Button
+            android:layout_gravity="bottom|right"
+            android:id="@+id/homeButton"
+            android:background="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home" />
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
