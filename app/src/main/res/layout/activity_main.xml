@@ -13,14 +13,14 @@
         tools:context=".MainActivity">
 
         <TextView
-            style="@style/CustomFontSyle"
             android:id="@+id/textView"
-            android:text="Go To Edit Text Boxes"
+            style="@style/CustomFontSyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Go To Edit Text Boxes"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintHorizontal_bias="0.248"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.143" />
