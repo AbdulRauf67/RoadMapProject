@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/CustomColorTheme"
         tools:targetApi="31">
+        <activity
+            android:name=".BasicRecyclerView"
+            android:exported="false" />
 
         <activity
             android:name=".ParcelableIntentDesign"

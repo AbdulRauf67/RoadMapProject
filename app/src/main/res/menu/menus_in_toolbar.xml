@@ -10,12 +10,12 @@
         android:icon="@drawable/refesh_icon"
         android:title="Refresh" />
     <item
-        android:id="@+id/copy"
+        android:id="@+id/recycler_view"
         app:showAsAction="collapseActionView"
         android:orderInCategory="7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="copy" />
+        android:title="RecyclerView" />
     <item
         app:showAsAction="ifRoom"
         android:orderInCategory="5"

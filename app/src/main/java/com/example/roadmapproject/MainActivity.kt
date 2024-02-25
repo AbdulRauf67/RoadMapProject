@@ -5,11 +5,9 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -90,6 +88,10 @@ class MainActivity : AppCompatActivity() {
         else if (item.itemId== R.id.secondActivity) {
             var `intent-var` = Intent(this, MainActivity2::class.java)
             startActivity(`intent-var`)
+        }
+        else if (item.itemId == R.id.recycler_view){
+            var intent=Intent(this,BasicRecyclerView::class.java)
+            startActivity(intent)
         }
         else{
             Toast.makeText(this,"Copy",Toast.LENGTH_LONG).show()
