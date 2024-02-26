@@ -93,6 +93,10 @@ class MainActivity : AppCompatActivity() {
             var intent=Intent(this,BasicRecyclerView::class.java)
             startActivity(intent)
         }
+        else if(item.itemId == R.id.nested_recyclerViewId){
+            var intent=Intent(this,Nested_Recycler_View_Activity::class.java)
+            startActivity(intent)
+        }
         else{
             Toast.makeText(this,"Copy",Toast.LENGTH_LONG).show()
         }
