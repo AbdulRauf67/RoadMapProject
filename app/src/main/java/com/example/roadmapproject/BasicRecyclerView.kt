@@ -7,11 +7,15 @@ import android.view.ContextMenu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import java.util.Collections
+import java.util.Random
 
 class BasicRecyclerView : AppCompatActivity()  {
 
@@ -38,6 +42,13 @@ class BasicRecyclerView : AppCompatActivity()  {
 
         // Setting the Adapter with the recyclerview
         recyclerView.adapter = adapter
+        val swipeRefresh=findViewById<SwipeRefreshLayout>(R.id.swipelayour)
+        swipeRefresh.setOnRefreshListener {
+            swipeRefresh.isRefreshing=false
+            Collections.shuffle(data, Random(System.currentTimeMillis()))
+            adapter.notifyDataSetChanged()
+
+        }
 
         registerForContextMenu(recyclerView)
 

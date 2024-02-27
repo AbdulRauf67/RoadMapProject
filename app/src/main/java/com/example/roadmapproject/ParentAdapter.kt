@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 class ParentAdapter(private val parentItemList: List<ParentItemModel>):
     RecyclerView.Adapter<ParentAdapter.parentViewHolder>() {
@@ -52,6 +53,8 @@ class ParentAdapter(private val parentItemList: List<ParentItemModel>):
             var Childadapter=ChildAdapter(RawparentItemTitle.childItemList)
             childRecyclerView.adapter=Childadapter
             childRecyclerView.layoutManager=LinearLayoutManager(itemView.context,LinearLayoutManager.HORIZONTAL,false)
+            //for staggered or grid Recycler View so the layoutManager to set
+            //childRecyclerView.layoutManager=StaggeredGridLayoutManager(3,LinearLayoutManager.HORIZONTAL)
         }
     }
 }
