@@ -3,11 +3,12 @@ package com.example.roadmapproject
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ChildAdapter(private val childItemList: List<ChildItemModel>): RecyclerView.Adapter<ChildAdapter.ChildViewHolder>() {
+class ChildAdapter(private val animationId:Int,private val childItemList: List<ChildItemModel>): RecyclerView.Adapter<ChildAdapter.ChildViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChildAdapter.ChildViewHolder {
         val view=LayoutInflater.from(parent.context).inflate(R.layout.child_recycler_view2,parent,false)
@@ -19,6 +20,7 @@ class ChildAdapter(private val childItemList: List<ChildItemModel>): RecyclerVie
 
         holder.imageView.setImageResource(item_view_model.imageView)
         holder.textView.text=item_view_model.childItemTitle
+        holder.itemView.animation=AnimationUtils.loadAnimation(holder.itemView.context,animationId)
     }
 
     override fun getItemCount(): Int {

@@ -38,7 +38,7 @@ class BasicRecyclerView : AppCompatActivity()  {
         val onItemClickListener: AdapterView.OnItemClickListener? = null
 
         // This will pass the ArrayList to our Adapter
-        adapter = CustomAdapter(this,data)
+        adapter = CustomAdapter(R.anim.scale,this,data)
 
         // Setting the Adapter with the recyclerview
         recyclerView.adapter = adapter
@@ -46,7 +46,10 @@ class BasicRecyclerView : AppCompatActivity()  {
         swipeRefresh.setOnRefreshListener {
             swipeRefresh.isRefreshing=false
             Collections.shuffle(data, Random(System.currentTimeMillis()))
+            adapter = CustomAdapter(R.anim.translate,this,data )
+            recyclerView.adapter = adapter
             adapter.notifyDataSetChanged()
+
 
         }
 

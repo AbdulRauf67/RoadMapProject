@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.Button
 import android.widget.ImageView
@@ -15,7 +16,7 @@ import androidx.core.os.persistableBundleOf
 import androidx.recyclerview.widget.RecyclerView
 
 @Suppress("DEPRECATION")
-class CustomAdapter(private val context: Context, private val mList: List<ItemsViewModel>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class CustomAdapter(private val animationId:Int, private val context: Context, private val mList: List<ItemsViewModel>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -36,6 +37,8 @@ class CustomAdapter(private val context: Context, private val mList: List<ItemsV
         holder.imageView.setImageResource(ItemsViewModel.image)
         // sets the text to the textview from our itemHolder class
         holder.textView.text = ItemsViewModel.text
+
+        holder.itemView.animation=AnimationUtils.loadAnimation(holder.itemView.context,animationId )
 
 
         holder.textView.setOnClickListener(View.OnClickListener {
