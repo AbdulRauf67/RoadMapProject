@@ -106,6 +106,10 @@ class MainActivity : AppCompatActivity() {
             var intent=Intent(this,CardViewDesign::class.java)
             startActivity(intent)
         }
+        else if (item.itemId==R.id.SimpleFragment){
+            var intent=Intent(this,SingleFragmentActivity::class.java)
+            startActivity(intent)
+        }
         else{
             Toast.makeText(this,"Copy",Toast.LENGTH_LONG).show()
         }

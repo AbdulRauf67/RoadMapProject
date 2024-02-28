@@ -16,6 +16,9 @@
         android:theme="@style/CustomColorTheme"
         tools:targetApi="31">
         <activity
+            android:name=".SingleFragmentActivity"
+            android:exported="false" />
+        <activity
             android:name=".BasicFragmentsViewActivity"
             android:exported="false"
             android:label="@string/title_activity_for_fragments"

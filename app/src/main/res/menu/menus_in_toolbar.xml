@@ -59,6 +59,14 @@
         android:orderInCategory="12"
         android:title="Basic Card View"
         />
+    <item
+        android:id="@+id/SimpleFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="SimpleFragment"
+        />
+
 
 
 </menu>
