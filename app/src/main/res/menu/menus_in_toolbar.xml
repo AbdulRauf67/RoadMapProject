@@ -66,6 +66,13 @@
         android:orderInCategory="13"
         android:title="SimpleFragment"
         />
+    <item
+        android:id="@+id/ListFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="List Fragment"
+        />
 
 
 
