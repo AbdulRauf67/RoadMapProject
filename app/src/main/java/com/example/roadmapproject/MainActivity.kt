@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar2)
 
+        /*
         binding.button1.setOnClickListener(View.OnClickListener {
             // Explicit Intent
             var `intent-var`=Intent(this,MainActivity2::class.java)
@@ -44,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         binding.cardViewBtn.setOnClickListener(View.OnClickListener {
             var intent=Intent(this,CardViewDesign::class.java)
             startActivity(intent)
-        })
+        }) */
         binding.webSiteBtn.setOnClickListener(View.OnClickListener {
             var intent=Intent(this,WebSiteView::class.java)
             startActivity(intent)
@@ -95,6 +96,14 @@ class MainActivity : AppCompatActivity() {
         }
         else if(item.itemId == R.id.nested_recyclerViewId){
             var intent=Intent(this,Nested_Recycler_View_Activity::class.java)
+            startActivity(intent)
+        }
+        else if (item.itemId ==R.id.BasicFragmentView){
+            var intent=Intent(this,BasicFragmentsViewActivity::class.java)
+            startActivity(intent)
+        }
+        else if (item.itemId==R.id.BasicCartView){
+            var intent=Intent(this,CardViewDesign::class.java)
             startActivity(intent)
         }
         else{

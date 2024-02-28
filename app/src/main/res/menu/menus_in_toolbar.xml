@@ -45,5 +45,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="SecondActivity" />
+    <item
+        android:id="@+id/BasicFragmentView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="12"
+        android:title="BasicViewActivity With Faragments"
+        />
+    <item
+        android:id="@+id/BasicCartView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="12"
+        android:title="Basic Card View"
+        />
+
 
 </menu>
