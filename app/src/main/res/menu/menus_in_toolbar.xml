@@ -80,6 +80,13 @@
         android:orderInCategory="13"
         android:title="fragments_passingdata_backstack"
         />
+    <item
+        android:id="@+id/ViewPagerActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="SimpleViewPager"
+        />
 
 
 

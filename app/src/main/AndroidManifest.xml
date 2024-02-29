@@ -16,6 +16,9 @@
         android:theme="@style/CustomColorTheme"
         tools:targetApi="31">
         <activity
+            android:name=".ViewPagerActivity"
+            android:exported="false" />
+        <activity
             android:name=".kotlin_fragments_passingdata_backstack"
             android:exported="false" />
         <activity

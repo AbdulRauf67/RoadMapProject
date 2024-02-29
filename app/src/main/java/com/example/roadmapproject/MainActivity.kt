@@ -118,6 +118,10 @@ class MainActivity : AppCompatActivity() {
             var intent=Intent(this, kotlin_fragments_passingdata_backstack::class.java)
             startActivity(intent)
         }
+        else if (item.itemId==R.id.ViewPagerActivity){
+            var intent=Intent(this, ViewPagerActivity::class.java)
+            startActivity(intent)
+        }
         else{
             Toast.makeText(this,"Copy",Toast.LENGTH_LONG).show()
         }
