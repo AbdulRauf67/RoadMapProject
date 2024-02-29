@@ -1,6 +1,8 @@
 package com.example.roadmapproject
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -25,6 +27,19 @@ class BasicFragmentsViewActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_for_fragments)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        binding.BackStackBtn.setOnClickListener(View.OnClickListener {
+            val context=this@BasicFragmentsViewActivity
+            val fragmentManager=context.supportFragmentManager
+            val fragmentes = fragmentManager.fragments
+            val myFragmentOnBackStack=fragmentManager.backStackEntryCount
+            var showMyFragment:String=""
+            for (entry in 0 until fragmentManager.backStackEntryCount){
+                showMyFragment=showMyFragment+fragmentManager.getBackStackEntryAt(entry).id + "---"+fragmentes[entry].tag+"\n"
+            }
+            showMyFragment=showMyFragment+"No more fragmenets on Back Stack = "+myFragmentOnBackStack.toString()
+            Toast.makeText(context,showMyFragment,Toast.LENGTH_LONG).show()
+        })
 
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

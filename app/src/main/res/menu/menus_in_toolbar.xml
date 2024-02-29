@@ -73,6 +73,13 @@
         android:orderInCategory="13"
         android:title="List Fragment"
         />
+    <item
+        android:id="@+id/fragments_passingdata_backstack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="fragments_passingdata_backstack"
+        />
 
 
 
