@@ -135,6 +135,10 @@ class MainActivity : AppCompatActivity() {
                 var intent=Intent(this, ViewPager2WithFragmentsActivity::class.java)
                 startActivity(intent)
             }
+            R.id.ChipActivity -> {
+                var intent = Intent(this, ChipsShownActivity::class.java)
+                startActivity(intent)
+            }
             else -> {
                 Toast.makeText(this,"Copy",Toast.LENGTH_LONG).show()
             }
