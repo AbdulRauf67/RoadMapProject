@@ -94,6 +94,13 @@
         android:orderInCategory="13"
         android:title="ImageSliderViewPager"
         />
+    <item
+        android:id="@+id/ViewPagerTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="View Pager2"
+        />
 
 
 

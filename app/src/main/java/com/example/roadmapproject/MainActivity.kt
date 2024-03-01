@@ -68,66 +68,72 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId== R.id.ParcelableIntent){
-            val movieData=MovieData(5,"ClassFllows","Generic information","2023",
-                "10:35","Abdul Rauf","BSCS fallows","Http://GeeksForGeeks")
-            // Parcelable Intent
-            var intent=Intent(this,ParcelableIntentDesign::class.java)
-            intent.putExtra("MoveInfo",movieData)
-            startActivity(intent)
-        }
-        else if (item.itemId== R.id.views){
-            val passingObject=MyCustomObject()
-            passingObject.name="Abdul Rauf"
-            passingObject.id=67
-            passingObject.place="KhanPur"
-            var intent=Intent(this,TextViews::class.java)
-            intent.putExtra("checkId","Main")
-            intent.putExtra("object",passingObject)
-            startActivity(intent)
-        }
-        else if (item.itemId== R.id.secondActivity) {
-            var `intent-var` = Intent(this, MainActivity2::class.java)
-            startActivity(`intent-var`)
-        }
-        else if (item.itemId == R.id.recycler_view){
-            var intent=Intent(this,BasicRecyclerView::class.java)
-            startActivity(intent)
-        }
-        else if(item.itemId == R.id.nested_recyclerViewId){
-            var intent=Intent(this,Nested_Recycler_View_Activity::class.java)
-            startActivity(intent)
-        }
-        else if (item.itemId ==R.id.BasicFragmentView){
-            var intent=Intent(this,BasicFragmentsViewActivity::class.java)
-            startActivity(intent)
-        }
-        else if (item.itemId==R.id.BasicCartView){
-            var intent=Intent(this,CardViewDesign::class.java)
-            startActivity(intent)
-        }
-        else if (item.itemId==R.id.SimpleFragment){
-            var intent=Intent(this,SingleFragmentActivity::class.java)
-            startActivity(intent)
-        }
-        else if (item.itemId==R.id.ListFragment){
-            var intent=Intent(this, ListFragmentActivity::class.java)
-            startActivity(intent)
-        }
-        else if (item.itemId==R.id.fragments_passingdata_backstack){
-            var intent=Intent(this, kotlin_fragments_passingdata_backstack::class.java)
-            startActivity(intent)
-        }
-        else if (item.itemId==R.id.ViewPagerActivity){
-            var intent=Intent(this, ViewPagerActivity::class.java)
-            startActivity(intent)
-        }
-        else if (item.itemId==R.id.ImageSliderViewPager){
-            var intent=Intent(this, ImageSliderViewPager::class.java)
-            startActivity(intent)
-        }
-        else{
-            Toast.makeText(this,"Copy",Toast.LENGTH_LONG).show()
+        when (item.itemId) {
+            R.id.ParcelableIntent -> {
+                val movieData=MovieData(5,"ClassFllows","Generic information","2023",
+                    "10:35","Abdul Rauf","BSCS fallows","Http://GeeksForGeeks")
+                // Parcelable Intent
+                var intent=Intent(this,ParcelableIntentDesign::class.java)
+                intent.putExtra("MoveInfo",movieData)
+                startActivity(intent)
+            }
+            R.id.views -> {
+                val passingObject=MyCustomObject()
+                passingObject.name="Abdul Rauf"
+                passingObject.id=67
+                passingObject.place="KhanPur"
+                var intent=Intent(this,TextViews::class.java)
+                intent.putExtra("checkId","Main")
+                intent.putExtra("object",passingObject)
+                startActivity(intent)
+            }
+            R.id.secondActivity -> {
+                var `intent-var` = Intent(this, MainActivity2::class.java)
+                startActivity(`intent-var`)
+            }
+            R.id.recycler_view -> {
+                var intent=Intent(this,BasicRecyclerView::class.java)
+                startActivity(intent)
+            }
+            R.id.nested_recyclerViewId -> {
+                var intent=Intent(this,Nested_Recycler_View_Activity::class.java)
+                startActivity(intent)
+            }
+            R.id.BasicFragmentView -> {
+                var intent=Intent(this,BasicFragmentsViewActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.BasicCartView -> {
+                var intent=Intent(this,CardViewDesign::class.java)
+                startActivity(intent)
+            }
+            R.id.SimpleFragment -> {
+                var intent=Intent(this,SingleFragmentActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.ListFragment -> {
+                var intent=Intent(this, ListFragmentActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.fragments_passingdata_backstack -> {
+                var intent=Intent(this, kotlin_fragments_passingdata_backstack::class.java)
+                startActivity(intent)
+            }
+            R.id.ViewPagerActivity -> {
+                var intent=Intent(this, ViewPagerActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.ImageSliderViewPager -> {
+                var intent=Intent(this, ImageSliderViewPager::class.java)
+                startActivity(intent)
+            }
+            R.id.ViewPagerTwo -> {
+                var intent=Intent(this, ViewPager2Activity::class.java)
+                startActivity(intent)
+            }
+            else -> {
+                Toast.makeText(this,"Copy",Toast.LENGTH_LONG).show()
+            }
         }
         return super.onOptionsItemSelected(item)
     }
