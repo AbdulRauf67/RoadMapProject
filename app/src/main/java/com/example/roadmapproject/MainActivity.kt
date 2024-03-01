@@ -139,6 +139,10 @@ class MainActivity : AppCompatActivity() {
                 var intent = Intent(this, ChipsShownActivity::class.java)
                 startActivity(intent)
             }
+            R.id.BottomSheet -> {
+                var intent = Intent(this, BottomSheetActivity::class.java)
+                startActivity(intent)
+            }
             else -> {
                 Toast.makeText(this,"Copy",Toast.LENGTH_LONG).show()
             }

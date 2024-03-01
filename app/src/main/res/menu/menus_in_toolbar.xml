@@ -115,6 +115,13 @@
         android:orderInCategory="13"
         android:title="Chips Shown Activity "
         />
+    <item
+        android:id="@+id/BottomSheet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="Bottom Sheet Activity "
+        />
 
 
 
