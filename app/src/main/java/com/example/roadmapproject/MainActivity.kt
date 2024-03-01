@@ -131,6 +131,10 @@ class MainActivity : AppCompatActivity() {
                 var intent=Intent(this, ViewPager2Activity::class.java)
                 startActivity(intent)
             }
+            R.id.ViewPager2WithFragments -> {
+                var intent=Intent(this, ViewPager2WithFragmentsActivity::class.java)
+                startActivity(intent)
+            }
             else -> {
                 Toast.makeText(this,"Copy",Toast.LENGTH_LONG).show()
             }
