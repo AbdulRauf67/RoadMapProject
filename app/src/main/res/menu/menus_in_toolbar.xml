@@ -122,6 +122,13 @@
         android:orderInCategory="13"
         android:title="Bottom Sheet Activity "
         />
+    <item
+        android:id="@+id/navigationDrawerBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="Navigation Drawer Activity"
+        />
 
 
 
