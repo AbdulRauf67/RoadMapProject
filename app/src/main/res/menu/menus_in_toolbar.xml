@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nested_recyclerViewId"
+        android:orderInCategory="6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/refesh_icon"
+        android:title="Nested Recycler View" />
+    <item
+        android:id="@+id/recycler_view"
+        app:showAsAction="collapseActionView"
+        android:orderInCategory="7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="RecyclerView" />
+    <item
+        app:showAsAction="ifRoom"
+        android:orderInCategory="5"
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/search_icon"
+        android:title="Search" />
+    <item
+        android:id="@+id/ParcelableIntent"
+        app:showAsAction="collapseActionView"
+        android:orderInCategory="8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Parcelable intent" />
+    <item
+        android:id="@+id/views"
+        app:showAsAction="collapseActionView"
+        android:orderInCategory="9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Show views" />
+    <item
+        android:id="@+id/secondActivity"
+        app:showAsAction="collapseActionView"
+        android:orderInCategory="10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="SecondActivity" />
+    <item
+        android:id="@+id/BasicFragmentView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="12"
+        android:title="BasicViewActivity With Faragments"
+        />
+    <item
+        android:id="@+id/BasicCartView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="12"
+        android:title="Basic Card View"
+        />
+    <item
+        android:id="@+id/SimpleFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="SimpleFragment"
+        />
+    <item
+        android:id="@+id/ListFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="List Fragment"
+        />
+    <item
+        android:id="@+id/fragments_passingdata_backstack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="fragments_passingdata_backstack"
+        />
+    <item
+        android:id="@+id/ViewPagerActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="SimpleViewPager"
+        />
+    <item
+        android:id="@+id/ImageSliderViewPager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="ImageSliderViewPager"
+        />
+    <item
+        android:id="@+id/ViewPagerTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="View Pager2"
+        />
+    <item
+        android:id="@+id/ViewPager2WithFragments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="View Pager2 With Fragments"
+        />
+    <item
+        android:id="@+id/ChipActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="Chips Shown Activity "
+        />
+    <item
+        android:id="@+id/BottomSheet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="Bottom Sheet Activity "
+        />
+    <item
+        android:id="@+id/navigationDrawerBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orderInCategory="13"
+        android:title="Navigation Drawer Activity"
+        />
+
+
+
+</menu>

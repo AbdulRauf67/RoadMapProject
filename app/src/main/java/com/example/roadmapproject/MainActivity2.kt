@@ -12,13 +12,16 @@ import android.os.Bundle
 import android.os.Message
 import android.os.PatternMatcher
 import android.text.TextUtils
+import android.view.Gravity
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.RadioButton
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.adapters.ToolbarBindingAdapter
@@ -27,6 +30,7 @@ import com.example.roadmapproject.databinding.ActivityMainBinding
 import java.text.FieldPosition
 import java.time.Duration
 
+@Suppress("DEPRECATION")
 class MainActivity2 : AppCompatActivity() {
     private lateinit var binding: ActivityMain2Binding
 
@@ -102,7 +106,17 @@ class MainActivity2 : AppCompatActivity() {
                 binding.checkBox.setTextColor(Color.parseColor("black"))
                 status = "CheckBox is UnChecked"
             }
-            Toast.makeText(this,status,Toast.LENGTH_SHORT).show()
+            val toastlayout=layoutInflater.inflate(R.layout.custom_toast_layout,null)
+            var textView:TextView=toastlayout.findViewById(R.id.textView12)
+            textView.text=status
+            val customToast=Toast(this)
+            customToast.duration=Toast.LENGTH_LONG
+            customToast.setGravity(Gravity.CENTER_VERTICAL,0,0)
+            customToast.view=toastlayout
+            //customToast.setText(status)
+            customToast.show()
+
+            //Toast.makeText(this,status,Toast.LENGTH_SHORT).show()
         }
 
         /*var passwordLenght=0
@@ -131,6 +145,24 @@ class MainActivity2 : AppCompatActivity() {
         }
 
         binding.InfoBtn.setOnClickListener(View.OnClickListener {
+
+            // alert dialog
+            val builder=AlertDialog.Builder(this)
+            builder.setTitle("Submit required fields")
+            builder.setMessage("fill the required fields before show the information of these infromations ..   okay")
+            builder.setIcon(android.R.drawable.ic_dialog_alert)
+            builder.setPositiveButton("yes"){
+                    _, _ ->Toast.makeText(this,"you choice the Yes",Toast.LENGTH_LONG).show()
+            }
+            builder.setNeutralButton("Cancel"){
+                    _, _ ->Toast.makeText(this,"Cancel operation",Toast.LENGTH_LONG).show()
+            }
+            builder.setNegativeButton("No"){
+                    _, _ ->Toast.makeText(this,"Clicked No",Toast.LENGTH_LONG).show()
+            }
+            val alertDialog:AlertDialog=builder.create()
+            alertDialog.setCancelable(false)
+            alertDialog.show()
 
             if (binding.radioButton.isChecked){
                 value="Male"

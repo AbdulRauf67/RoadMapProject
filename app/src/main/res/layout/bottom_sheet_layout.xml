@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp">
+        <ImageView
+            android:id="@+id/imageCourse"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/image_three"/>
+
+        <TextView
+            android:text="Abdul Rauf"
+            android:id="@+id/CourseName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/imageCourse"
+            android:layout_toRightOf="@id/imageCourse"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:text="AgriLinkUP FYP"
+            android:id="@+id/CourseNameTracks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/CourseName"
+            android:textSize="18sp"
+            android:layout_toEndOf="@id/imageCourse"
+            android:layout_toRightOf="@id/imageCourse"
+            android:textStyle="bold"/>
+        <TextView
+            android:text="At BSCS 8th Semester"
+            android:id="@+id/CourseNameDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/CourseNameTracks"
+            android:textSize="18sp"
+            android:layout_toEndOf="@id/imageCourse"
+            android:layout_toRightOf="@id/imageCourse"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/idDismissBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageCourse"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Dismiss Bottom Sheet " />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

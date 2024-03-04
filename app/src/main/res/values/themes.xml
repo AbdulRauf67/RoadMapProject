@@ -9,5 +9,11 @@
     <style name="CustomColorTheme" parent="Base.Theme.RoadMapProject">
         <item name="android:textColor">#0639ED</item>
     </style>
+
     <style name="Theme.RoadMapProject" parent="Base.Theme.RoadMapProject" />
+    <!-- Base application theme. -->
+    <style name="Base.CustomColorTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
 </resources>
